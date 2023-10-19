@@ -1,0 +1,16 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3em;
+}
+
+.scopriChiSono {
+  display: flex;
+  padding: 0.5em;
+  border: 1px solid black;
+}
+
+.dettaglioProfilo {
+  display: flex;
+}

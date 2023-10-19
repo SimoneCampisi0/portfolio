@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
 
 const enterTransition = transition(':enter', [
