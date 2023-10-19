@@ -14,3 +14,12 @@
 .dettaglioProfilo {
   display: flex;
 }
+
+@media (max-width: 800px) {
+  .home {
+    flex-direction: column;
+  }
+  .scopriChiSono {
+    justify-content: center;
+  }
+}
