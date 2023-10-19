@@ -3,8 +3,8 @@
     [LOGO]
   </div>
 
-  <div class="hamburgerMenu">
-    <img [src]="svgData" alt="SVG Image">
+  <div class="hamburgerMenuDiv" (click)="apriMenuMobile()">
+    <img [src]="svgData" class="hamburgerMenuImg" alt="SVG Image">
   </div>
 
   <ul class="menu-flex">
@@ -12,6 +12,14 @@
     <li class="flex-item"><a routerLink="">Chi sono</a></li>
     <li class="flex-item"><a routerLink="">Progetti</a></li>
     <li class="flex-item"><a routerLink="">Contattami</a></li>
+  </ul>
+
+
+  <ul class="menu-flex-mobile" *ngIf="this.isMobileMenuOpen">
+    <li class="flex-item-mobile"><a routerLink="">Home</a></li>
+    <li class="flex-item-mobile"><a routerLink="">Chi sono</a></li>
+    <li class="flex-item-mobile"><a routerLink="">Progetti</a></li>
+    <li class="flex-item-mobile"><a routerLink="">Contattami</a></li>
   </ul>
 
 

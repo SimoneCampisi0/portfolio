@@ -9,4 +9,10 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 export class HeaderMenuComponent {
   svgData: string = '../../assets/list.svg'
 
+  isMobileMenuOpen = false;
+
+  apriMenuMobile() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen
+    console.log(this.isMobileMenuOpen)
+  }
 }
