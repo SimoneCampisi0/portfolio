@@ -1,14 +1,16 @@
+.positionFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 a {
   text-decoration: none;
   color: black;
 }
 
 .flex-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
   display: flex;
   flex-direction: row;
   background-color: #caf0f8;
@@ -54,7 +56,9 @@ a {
   display: none;
 }
 
-
+.mobileMenu {
+  opacity: 0;
+}
 
 @media (max-width: 800px) {
   a {
@@ -76,7 +80,12 @@ a {
     margin: 0.5em;
   }
 
+  .mobileMenu {
+    opacity: 1;
+  }
+
   .menu-flex-mobile {
+    background-color: #caf0f8;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -89,12 +98,7 @@ a {
     font-family: 'CheapPine';
   }
 
-
   .menu-flex {
     display: none;
   }
-  /*.menu-flex {*/
-  /*  flex-direction: column;*/
-  /*  text-align: center;*/
-  /*}*/
 }

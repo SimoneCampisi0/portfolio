@@ -1,28 +1,32 @@
-<header class="flex-container">
-  <div class="logo">
-    [LOGO]
+<div class="positionFixed">
+  <header class="flex-container">
+    <div class="logo">
+      [LOGO]
+    </div>
+
+    <div class="hamburgerMenuDiv" (click)="apriMenuMobile()">
+      <img [src]="svgData" class="hamburgerMenuImg" alt="SVG Image">
+    </div>
+
+    <ul class="menu-flex">
+      <li class="flex-item"><a routerLink="">Home</a></li>
+      <li class="flex-item"><a routerLink="">Chi sono</a></li>
+      <li class="flex-item"><a routerLink="">Progetti</a></li>
+      <li class="flex-item"><a routerLink="">Contattami</a></li>
+    </ul>
+
+
+
+    <div class="voidElementForCenterMenu"></div>
+  </header>
+
+  <div class="mobileMenu">
+    <ul class="menu-flex-mobile" *ngIf="this.isMobileMenuOpen" @fadeIn @fadeOut>
+      <li class="flex-item-mobile"><a routerLink="">Home</a></li>
+      <li class="flex-item-mobile"><a routerLink="">Chi sono</a></li>
+      <li class="flex-item-mobile"><a routerLink="">Progetti</a></li>
+      <li class="flex-item-mobile"><a routerLink="">Contattami</a></li>
+    </ul>
   </div>
 
-  <div class="hamburgerMenuDiv" (click)="apriMenuMobile()">
-    <img [src]="svgData" class="hamburgerMenuImg" alt="SVG Image">
-  </div>
-
-  <ul class="menu-flex">
-    <li class="flex-item"><a routerLink="">Home</a></li>
-    <li class="flex-item"><a routerLink="">Chi sono</a></li>
-    <li class="flex-item"><a routerLink="">Progetti</a></li>
-    <li class="flex-item"><a routerLink="">Contattami</a></li>
-  </ul>
-
-
-  <ul class="menu-flex-mobile" *ngIf="this.isMobileMenuOpen">
-    <li class="flex-item-mobile"><a routerLink="">Home</a></li>
-    <li class="flex-item-mobile"><a routerLink="">Chi sono</a></li>
-    <li class="flex-item-mobile"><a routerLink="">Progetti</a></li>
-    <li class="flex-item-mobile"><a routerLink="">Contattami</a></li>
-  </ul>
-
-
-  <div class="voidElementForCenterMenu"></div>
-</header>
-
+</div>
