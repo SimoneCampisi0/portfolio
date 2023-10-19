@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-header-menu',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-menu.component.css']
 })
 export class HeaderMenuComponent {
+  svgData: string = '../../assets/list.svg'
 
 }
