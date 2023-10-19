@@ -5,13 +5,13 @@ const enterTransition = transition(':enter', [
   style({
     opacity: 0
   }),
-  animate('0.5s ease-in', style({opacity: 1}))
+  animate('0.2s ease-in', style({opacity: 1}))
 ])
 const exitTransition = transition(':leave', [
   style({
     opacity: 1
   }),
-  animate('0.5s ease-out', style({opacity: 0}))
+  animate('0.2s ease-out', style({opacity: 0}))
 ])
 const fadeIn = trigger('fadeIn', [enterTransition])
 const fadeOut = trigger('fadeOut', [exitTransition])
