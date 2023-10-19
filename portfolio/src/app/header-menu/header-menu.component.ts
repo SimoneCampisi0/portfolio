@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-header-menu',

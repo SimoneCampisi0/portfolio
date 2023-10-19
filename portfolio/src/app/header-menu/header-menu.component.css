@@ -34,6 +34,11 @@ a {
 
 .flex-item { /* item dentro menu-flex */
   margin: 0 0.5em 0 0.5em;
+  transition: font-size 0.2s;
+}
+
+.flex-item:hover {
+  font-size: 1.1em;
 }
 
 
@@ -83,6 +88,7 @@ a {
     font-size: 2.5em;
     font-family: 'CheapPine';
   }
+
 
   .menu-flex {
     display: none;
