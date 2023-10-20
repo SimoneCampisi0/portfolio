@@ -3,3 +3,8 @@
   font-family: 'CheapPine';
   src: url('/assets/cheap_pine.otf');
 }
+
+@font-face {
+  font-family: 'CheapPineSans';
+  src: url('/assets/cheap_pine_sans.ttf');
+}

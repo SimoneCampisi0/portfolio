@@ -14,12 +14,18 @@ a {
   display: flex;
   flex-direction: row;
   background-color: #caf0f8;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .logo {  /* elemento 1 nel flex-container */
   margin-left: 0.5em;
+}
+
+
+.imgLogo {
+  max-width: 9em;
+  height: auto;
 }
 
 .menu-flex { /* elemento 2 nel flex-container */
@@ -67,7 +73,7 @@ a {
   }
 
   .logo {
-    margin-top: 0.5em
+    margin-top: 0.5em;
   }
 
   .flex-container {
