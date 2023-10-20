@@ -8,3 +8,14 @@
   font-family: 'CheapPineSans';
   src: url('/assets/cheap_pine_sans.ttf');
 }
+
+@font-face {
+  font-family: 'LeagueSpartan';
+  src: url('/assets/league-spartan.otf');
+}
+
+:root {
+  --primaryColor: #0D1821;
+  --secondaryColor: #6985C0;
+  --accentColor: white;
+}

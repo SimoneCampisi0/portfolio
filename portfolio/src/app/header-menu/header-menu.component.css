@@ -5,15 +5,15 @@
   right: 0;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
+/*a .flex-item {*/
+/*  text-decoration: none;*/
+
+/*}*/
 
 .flex-container {
+  background-color: var(--primaryColor);
   display: flex;
   flex-direction: row;
-  background-color: #caf0f8;
   justify-content: space-around;
   align-items: center;
 }
@@ -24,7 +24,7 @@ a {
 
 
 .imgLogo {
-  max-width: 9em;
+  max-width: 14em;
   height: auto;
 }
 
@@ -35,14 +35,23 @@ a {
   margin: 0;
   padding: 0;
 
-  font-size: 2.5em;
-  font-family: 'CheapPine';
+  font-size: 1.2em;
+  font-family: LeagueSpartan;
 }
 
 
 .flex-item { /* item dentro menu-flex */
-  margin: 0 0.5em 0 0.5em;
+  margin: 0.5em 0.7em 0.2em 0.7em;
   transition: font-size 0.2s;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #E9E9E9;
+}
+
+.menu-item:hover {
+  color: var(--secondaryColor);
 }
 
 .flex-item:hover {
@@ -91,7 +100,7 @@ a {
   }
 
   .menu-flex-mobile {
-    background-color: #caf0f8;
+    background-color: var(--primaryColor);
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -100,8 +109,8 @@ a {
     margin: 0;
     padding: 0;
 
-    font-size: 2.5em;
-    font-family: 'CheapPine';
+    font-family: 'LeagueSpartan';
+    font-size: 1.2em;
   }
 
   .menu-flex {

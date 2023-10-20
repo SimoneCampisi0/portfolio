@@ -1,8 +1,9 @@
 <div class="positionFixed">
   <header class="flex-container">
     <div class="logo">
-<!--      IMG-->
-      <img class="imgLogo" src="../../assets/crop_def_logo.png" alt="">
+      <a routerLink="#">
+        <img class="imgLogo" src="../../assets/def_logo_1.png" alt="">
+      </a>
     </div>
 
     <div class="hamburgerMenuDiv" (click)="apriMenuMobile()">
@@ -10,10 +11,10 @@
     </div>
 
     <ul class="menu-flex">
-      <li class="flex-item"><a routerLink="">Home</a></li>
-      <li class="flex-item"><a routerLink="">Chi sono</a></li>
-      <li class="flex-item"><a routerLink="">Progetti</a></li>
-      <li class="flex-item"><a routerLink="">Contattami</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Home</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Chi sono</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Progetti</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Contattami</a></li>
     </ul>
 
 
@@ -22,10 +23,10 @@
 
   <div class="mobileMenu">
     <ul class="menu-flex-mobile" *ngIf="this.isMobileMenuOpen" @fadeIn @fadeOut>
-      <li class="flex-item-mobile"><a routerLink="">Home</a></li>
-      <li class="flex-item-mobile"><a routerLink="">Chi sono</a></li>
-      <li class="flex-item-mobile"><a routerLink="">Progetti</a></li>
-      <li class="flex-item-mobile"><a routerLink="">Contattami</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Home</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Chi sono</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Progetti</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="">Contattami</a></li>
     </ul>
   </div>
 
