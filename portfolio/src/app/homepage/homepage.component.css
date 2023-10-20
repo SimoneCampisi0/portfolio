@@ -12,11 +12,14 @@
 .scopriChiSono {
   display: flex;
   padding: 0.5em;
-  border: 1px solid black;
-
 
   align-items: center;
   justify-content: center;
+}
+
+.testoScopriPortfolio {
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .dettaglioProfilo {
@@ -46,8 +49,7 @@
   color: var(--secondaryColor);
 }
 
-.buttonScopriChiSono {
-  margin-top: 1.5em;
+.buttonScopriPortfolio {
   background-color: var(--secondaryColor);
   color: white;
   border: none;
@@ -58,7 +60,7 @@
   align-self: center;
 }
 
-.buttonScopriChiSono:hover {
+.buttonScopriPortfolio:hover {
   background-color: var(--accentColor);
   color: var(--secondaryColor);
   border: 1px solid black;
