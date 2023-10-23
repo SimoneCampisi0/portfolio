@@ -5,13 +5,9 @@
   right: 0;
 }
 
-/*a .flex-item {*/
-/*  text-decoration: none;*/
-
-/*}*/
-
 .flex-container {
-  background-color: var(--primaryColor);
+  background-color: transparent;
+  padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -48,6 +44,10 @@
 .menu-item {
   text-decoration: none;
   color: #E9E9E9;
+}
+
+.active {
+  color: var(--secondaryColor);
 }
 
 .menu-item:hover {
@@ -87,6 +87,7 @@
 
   .flex-container {
     flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .hamburgerMenuDiv {
@@ -101,7 +102,7 @@
   }
 
   .menu-flex-mobile {
-    background-color: var(--primaryColor);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     text-align: center;
