@@ -9,23 +9,36 @@
   height: 95vh;
 }
 
-#background-video {
-  width: 100vw;
+/*#background-video {*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  object-fit: cover;*/
+/*  position: fixed;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  z-index: -1;*/
+/*}*/
+
+#background-image-right {
+  z-index: -1;
+  width: 50vw;
   height: 100vh;
   object-fit: cover;
   position: fixed;
-  left: 0;
+  left: 50%;
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: -1;
 }
 
 .scopriChiSono {
   display: flex;
   padding: 0.5em;
 
-  color: var(--accentColor);
+  /*color: var(--accentColor);*/
+  color: black;
 
   align-items: center;
   justify-content: center;
@@ -83,6 +96,14 @@
 }
 
 @media (max-width: 800px) {
+  #background-image-right {
+    width: 100vw;
+    height: 50vh;
+
+    left: 0;
+    top: 50%;
+  }
+
   .home {
     flex-direction: column;
   }
