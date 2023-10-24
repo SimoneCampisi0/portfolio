@@ -23,8 +23,8 @@
 
 .immagineDettaglioProfilo {
   border-radius: 50%;
-  width: 20%;
-  height: 40%;
+  width: 25em;
+  height: 25em;
   align-self: center;
   object-fit: cover;   /*l'immagine mantiene le sue proporzioni e riempie la dimensione data.*/
 }
@@ -52,9 +52,4 @@
     font-size: 4em;
   }
 
-
-
-  .immagineDettaglioProfilo {
-    width: 60%;
-  }
 }
