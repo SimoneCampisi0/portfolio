@@ -11,7 +11,9 @@ export class RouteService {
     });
   }
 
-  private onScroll(): void {
+  private onScroll(): void { //TODO: cambiare i pixel con valori relativi all'altezza della finestra in quel momento.
+    console.log(document.documentElement.scrollTop)
+
     if(document.documentElement.scrollTop == 0 || document.documentElement.scrollTop < 600) {
       this.router.navigate(['/home']);
     }
@@ -25,10 +27,12 @@ export class RouteService {
     switch(pagina) {
       case 'home':
         document.documentElement.scrollTop = 0;
+        this.router.navigate(['/home']);
         break;
 
       case 'chi-sono':
-        document.documentElement.scrollTop = 1080;
+        document.documentElement.scrollTop = 800;
+        this.router.navigate(['/chi-sono']);
         break;
     }
   }
