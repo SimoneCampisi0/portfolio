@@ -1,0 +1,12 @@
+.chi-sono {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url('../../assets/black.png'); /* Immagine di sfondo */
+  background-repeat: no-repeat; /* Impedisci la ripetizione dell'immagine */
+  background-size: cover; /* Adatta l'immagine alla dimensione del div */
+  height: 100vh;
+}
+

@@ -6,20 +6,24 @@
   /*margin-top: 4em;*/
   font-family: 'CheapPineSans';
 
-  height: 95vh;
+  height: 100vh;
+
+  background-image: url('../../assets/background0.jpg'); /* Immagine di sfondo */
+  background-repeat: no-repeat; /* Impedisci la ripetizione dell'immagine */
+  background-size: cover; /* Adatta l'immagine alla dimensione del div */
 }
 
-#background-image {
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+/*#background-image {*/
+/*  z-index: -1;*/
+/*  width: 100vw;*/
+/*  height: 100vh;*/
+/*  object-fit: cover;*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*}*/
 
 .immagineDettaglioProfilo {
   border-radius: 50%;

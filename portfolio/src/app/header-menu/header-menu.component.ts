@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
+import {RouteService} from "../service/routes.service";
 
 const enterTransition = transition(':enter', [
   style({
@@ -27,8 +28,15 @@ export class HeaderMenuComponent {
 
   isMobileMenuOpen = false;
 
+  constructor(private routeService: RouteService) {
+  }
+
   apriMenuMobile() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen
     console.log(this.isMobileMenuOpen)
+  }
+
+  cambiaPagina(pagina: string) {
+    this.routeService.cambiaPagina(pagina)
   }
 }
