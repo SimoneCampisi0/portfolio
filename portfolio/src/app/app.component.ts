@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {RouteService} from "./service/routes.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,18 @@ export class AppComponent implements AfterViewInit {
 
   title = 'portfolio'
 
-  constructor(private routerService: RouteService) { }
+  constructor(private routerService: RouteService, private router: Router) { }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    console.log("scroll")
+
+    if (document.documentElement.scrollTop <= this.routerService.homeOffset) {
+      this.router.navigate(['/home']);
+    } else if (document.documentElement.scrollTop <= this.routerService.chiSonoOffset) { //TODO fix this
+      this.router.navigate(['/chi-sono']);
+    }
+  }
 
   ngAfterViewInit() {
     if (this.homeSection && this.chiSonoSection) {

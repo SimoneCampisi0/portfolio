@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { HostListener, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -10,15 +10,6 @@ export class RouteService {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-      window.addEventListener('scroll', () => {
-          this.onScroll();
-      });
-  }
-
-  onScroll() { //TODO definire logica per cui, quando si passa da una sezione all'altra, cambi l'URI del sito
-
-  }
 
   cambiaPagina(pagina: string) {
       switch(pagina) {
