@@ -5,44 +5,35 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class RouteService {
-  constructor(private router: Router) {
-    window.addEventListener('scroll', () => {
-      this.onScroll();
-    });
+  homeOffset: number = 0;
+  chiSonoOffset: number = 0;
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+      window.addEventListener('scroll', () => {
+          this.onScroll();
+      });
   }
 
-  private onScroll() {
+  onScroll() { //TODO definire logica per cui, quando si passa da una sezione all'altra, cambi l'URI del sito
 
   }
 
   cambiaPagina(pagina: string) {
+      switch(pagina) {
+          case 'home':
+              document.documentElement.scrollTop = 0;
+              this.router.navigate(['/home']);
+              break;
+
+          case 'chi-sono':
+              document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset;
+              this.router.navigate(['/chi-sono']);
+              break;
+      }
 
   }
 
 
-  // private onScroll(): void { //
-  //   console.log(document.documentElement.scrollTop)
-  //
-  //   if(document.documentElement.scrollTop == 0 || document.documentElement.scrollTop < 600) {
-  //     this.router.navigate(['/home']);
-  //   }
-  //
-  //   if(document.documentElement.scrollTop > 600) {
-  //     this.router.navigate(['/chi-sono']);
-  //   }
-  // }
-  //
-  // cambiaPagina(pagina: string) {
-  //   switch(pagina) {
-  //     case 'home':
-  //       document.documentElement.scrollTop = 0;
-  //       this.router.navigate(['/home']);
-  //       break;
-  //
-  //     case 'chi-sono':
-  //       document.documentElement.scrollTop = 800;
-  //       this.router.navigate(['/chi-sono']);
-  //       break;
-  //   }
-  // }
 }

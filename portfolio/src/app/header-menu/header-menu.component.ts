@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
 import {RouteService} from "../service/routes.service";
+// import {RouteService} from "../service/routes.service";
 
 const enterTransition = transition(':enter', [
   style({
