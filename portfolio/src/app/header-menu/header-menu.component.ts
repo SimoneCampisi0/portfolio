@@ -34,7 +34,6 @@ export class HeaderMenuComponent {
 
   apriMenuMobile() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen
-    console.log(this.isMobileMenuOpen)
   }
 
   cambiaPagina(pagina: string) {

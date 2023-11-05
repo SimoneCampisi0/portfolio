@@ -17,9 +17,10 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    console.log("scroll")
+    console.log("homeOffset: "+this.routerService.homeOffset+ " chiSono: "+this.routerService.homeOffset)
+    console.log("scroll: "+document.documentElement.scrollTop)
 
-    if (document.documentElement.scrollTop <= this.routerService.homeOffset) {
+    if (document.documentElement.scrollTop <= this.routerService.homeOffset - 10) {
       this.router.navigate(['/home']);
     } else if (document.documentElement.scrollTop <= this.routerService.chiSonoOffset) { //TODO fix this
       this.router.navigate(['/chi-sono']);
