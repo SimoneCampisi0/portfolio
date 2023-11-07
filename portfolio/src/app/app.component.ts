@@ -17,13 +17,15 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    console.log("homeOffset: "+this.routerService.homeOffset+ " chiSono: "+this.routerService.homeOffset)
-    console.log("scroll: "+document.documentElement.scrollTop)
+    let currentHeight = document.documentElement.scrollTop;
 
-    if (document.documentElement.scrollTop <= this.routerService.homeOffset - 10) {
-      this.router.navigate(['/home']);
-    } else if (document.documentElement.scrollTop <= this.routerService.chiSonoOffset) { //TODO fix this
-      this.router.navigate(['/chi-sono']);
+    if(currentHeight < this.routerService.homeOffset) {
+      this.router.navigate(['/home']); // Cambio diretto a '/home'
+    }
+    if(currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.homeOffset + this.routerService.chiSonoOffset)) {
+      console.log(document.documentElement.scrollTop)
+      console.log(this.routerService.homeOffset + this.routerService.chiSonoOffset)
+      this.router.navigate(['/chi-sono']); // Cambio diretto a '/chi-sono'
     }
   }
 
