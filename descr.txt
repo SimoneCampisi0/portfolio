@@ -1,0 +1,7 @@
+Nato a Siracusa, mi sono diplomato presso l'ITI Enrico Fermi in Informatica.
+
+Successivamente, sono entrato nel mondo della consulenza informatica specializzandomi nella figura di Back-End Developer.
+
+Il mio obiettivo, tuttavia, è di raggiungere le competenze di un Full Stack Developer. 
+
+Per ciò, ho esplorato anche Angular e, più in generale, ho approfondito HTML e CSS, andando così ad ampliare il mio stack di tecnologie.
