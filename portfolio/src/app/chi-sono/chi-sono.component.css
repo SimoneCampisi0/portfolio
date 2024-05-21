@@ -1,3 +1,7 @@
+b {
+  color: var(--secondaryColor);
+}
+
 .chi-sono {
   display: flex;
   flex-direction: row;
@@ -25,16 +29,25 @@
   font-size: 3em;
   margin-bottom: 0.5em;
   font-family: 'CheapPineSans';
+  color: var(--secondaryColor);
 }
 
-.descr {
+.descrizione {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.descr-text {
   width: fit-content;
+  padding-bottom: 0.5em;
 }
-
 
 .competenze {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 2em;
+  margin-top: 0.5em;
 }
