@@ -61,7 +61,6 @@ b {
 .competenze {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: center;
   padding: 2em;
   margin-top: 0.5em;
@@ -70,5 +69,7 @@ b {
 .elenco-competenze {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 1em;
 }

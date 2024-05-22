@@ -29,9 +29,19 @@
   <div class="competenze">
     <div class="titolo">Competenze</div>
     <div class="elenco-competenze">
-      <app-card-skill></app-card-skill>
-      <app-card-skill></app-card-skill>
-      <app-card-skill></app-card-skill>
+      <app-card-skill
+        nomeCard="Spring Boot"
+        icon="fa-brands fa-java"
+        [livelloCompetenza]='4'
+      ></app-card-skill>
+      <app-card-skill
+        nomeCard="Angular"
+        icon="fa-brands fa-angular"
+        [livelloCompetenza]='3'></app-card-skill>
+      <app-card-skill
+        nomeCard="MySQL"
+        icon="fa-solid fa-database"
+        [livelloCompetenza]='4'></app-card-skill>
     </div>
   </div> <!-- col 2 -->
 </div>

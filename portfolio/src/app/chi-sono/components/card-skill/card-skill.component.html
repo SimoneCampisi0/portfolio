@@ -1,1 +1,14 @@
-<p>card-skill works!</p>
+<div class="card">
+  <div class="nomeCard-container">
+    {{ nomeCard }}
+  </div>
+
+  <div class="imgCard-container">
+    <i [class]="icon"></i>
+  </div>
+
+  <div class="competenze-container">
+    <div class="livello" *ngFor="let i of livelloArr"></div>
+  </div>
+
+</div>
