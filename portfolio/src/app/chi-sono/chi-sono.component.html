@@ -15,16 +15,23 @@
       </div>
     </div>
 
-<!--    Nato a Siracusa, mi sono diplomato presso l'ITI Enrico Fermi in Informatica.-->
+    <div class="socials">
+      <div (click)="redirectToLinkedin()">
+        <i class="fa-brands fa-linkedin link-social"></i>
+      </div>
 
-<!--    Successivamente, sono entrato nel mondo della consulenza informatica specializzandomi nella figura di Back-End Developer.-->
-
-<!--    Il mio obiettivo, tuttavia, è di raggiungere le competenze di un Full Stack Developer.-->
-
-<!--    Per ciò, ho esplorato anche Angular e, più in generale, ho approfondito HTML e CSS, andando così ad ampliare il mio stack di tecnologie.-->
+      <div (click)="redirectToGithub()">
+        <i class="fa-brands fa-github link-social"></i>
+      </div>
+    </div>
   </div>
 
   <div class="competenze">
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet!</div>
+    <div class="titolo">Competenze</div>
+    <div class="elenco-competenze">
+      <app-card-skill></app-card-skill>
+      <app-card-skill></app-card-skill>
+      <app-card-skill></app-card-skill>
+    </div>
   </div> <!-- col 2 -->
 </div>

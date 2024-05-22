@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomepageComponent } from './homepage/homepage.component';
 import { ChiSonoComponent } from './chi-sono/chi-sono.component';
 import { RouteService } from "./service/routes.service";
+import { CardSkillComponent } from './chi-sono/components/card-skill/card-skill.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RouteService } from "./service/routes.service";
     AppComponent,
     HeaderMenuComponent,
     HomepageComponent,
-    ChiSonoComponent
+    ChiSonoComponent,
+    CardSkillComponent
   ],
   imports: [
     BrowserModule,
