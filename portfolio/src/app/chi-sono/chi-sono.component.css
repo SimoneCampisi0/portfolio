@@ -73,3 +73,18 @@ b {
   justify-content: space-between;
   gap: 1em;
 }
+
+@media (max-width: 900px) {
+  .chi-sono {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .dettagli {
+    width: 75vw;
+  }
+
+  .competenze {
+    width: 75vw;
+  }
+}
