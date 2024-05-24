@@ -15,11 +15,24 @@ export class CardSkillComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    for (let i = 1; i <= this.livelloCompetenza; i++) {
-      this.livelloArr.push(i);
-    }
+    this.getLivelloArr();
   }
 
   ngOnDestroy(): void {
   }
+
+  getLivelloArr() {
+    for (let i = 1; i <= this.livelloCompetenza; i++) {
+      this.livelloArr.push(i);
+    }
+
+    if (this.livelloArr.length < 5) {
+      for (let i = this.livelloArr.length; i < 5; i++) {
+        this.livelloArr[i] = (0);
+      }
+    }
+
+    console.log("nomeCard: ",this.nomeCard,"this.livelloArr", this.livelloArr);
+  }
+
 }

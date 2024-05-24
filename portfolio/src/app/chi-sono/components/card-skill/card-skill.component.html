@@ -8,7 +8,10 @@
   </div>
 
   <div class="competenze-container">
-    <div class="livello" *ngFor="let i of livelloArr"></div>
+    <div *ngFor="let i of livelloArr">
+      <div class="livello" *ngIf="i != 0"></div>
+      <div class="empty" *ngIf="i == 0"></div>
+    </div>
   </div>
 
 </div>
