@@ -13,7 +13,7 @@
     <ul class="menu-flex">
       <li class="flex-item"><a class="menu-item" routerLink="/home" routerLinkActive="active" (click)="cambiaPagina('home')">Home</a></li>
       <li class="flex-item"><a class="menu-item" routerLink="/chi-sono" routerLinkActive="active" (click)="cambiaPagina('chi-sono')">Chi sono</a></li>
-      <li class="flex-item"><a class="menu-item" routerLink="/progetti" routerLinkActive="active">Progetti</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="/progetti" routerLinkActive="active" (click)="cambiaPagina('progetti')">Progetti</a></li>
       <li class="flex-item"><a class="menu-item" routerLink="/contattami" routerLinkActive="active">Contattami</a></li>
     </ul>
 
@@ -25,7 +25,7 @@
     <ul class="menu-flex-mobile" *ngIf="this.isMobileMenuOpen" @fadeIn @fadeOut>
       <li class="flex-item"><a class="menu-item" routerLink="/home" routerLinkActive="active" (click)="cambiaPagina('home')">Home</a></li>
       <li class="flex-item"><a class="menu-item" routerLink="/chi-sono" routerLinkActive="active" (click)="cambiaPagina('chi-sono')">Chi sono</a></li>
-      <li class="flex-item"><a class="menu-item" routerLink="/progetti" routerLinkActive="active">Progetti</a></li>
+      <li class="flex-item"><a class="menu-item" routerLink="/progetti" routerLinkActive="active" (click)="cambiaPagina('progetti')">Progetti</a></li>
       <li class="flex-item"><a class="menu-item" routerLink="/contattami" routerLinkActive="active">Contattami</a></li>
     </ul>
   </div>

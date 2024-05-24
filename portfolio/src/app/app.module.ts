@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ChiSonoComponent } from './chi-sono/chi-sono.component';
 import { RouteService } from "./service/routes.service";
 import { CardSkillComponent } from './chi-sono/components/card-skill/card-skill.component';
+import { ProgettiComponent } from './progetti/progetti/progetti.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CardSkillComponent } from './chi-sono/components/card-skill/card-skill.
     HeaderMenuComponent,
     HomepageComponent,
     ChiSonoComponent,
-    CardSkillComponent
+    CardSkillComponent,
+    ProgettiComponent
   ],
   imports: [
     BrowserModule,

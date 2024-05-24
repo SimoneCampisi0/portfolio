@@ -27,6 +27,8 @@ export class RouteService {
         break;
 
       case 'progetti':
+        document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset + this.progettiOffset;
+        this.router.navigate(['/progetti']);
         break;
 
       case 'contattami':

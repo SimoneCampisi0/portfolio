@@ -9,8 +9,9 @@ import {WindowRefService} from "./service/window.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('homeSection') homeSection: ElementRef | undefined;
-  @ViewChild('chiSonoSection') chiSonoSection: ElementRef | undefined;
+  // @ViewChild('homeSection') homeSection: ElementRef | undefined;
+  // @ViewChild('chiSonoSection') chiSonoSection: ElementRef | undefined;
+  // @ViewChild('progettiSection') progettiSection: ElementRef | undefined;
 
   title = 'portfolio'
 
@@ -29,12 +30,16 @@ export class AppComponent implements AfterViewInit {
   onScroll() {
     let currentHeight = document.documentElement.scrollTop;
 
-    if(currentHeight >= this.routerService.homeOffset && (currentHeight < (this.routerService.chiSonoOffset - 20))) {
+    if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
       this.router.navigate(['/home']);
     }
 
-    else if(currentHeight < this.routerService.chiSonoOffset) {
+    else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
       this.router.navigate(['/chi-sono']);
+    }
+
+    else if(currentHeight >= this.routerService.progettiOffset - 50) {
+      this.router.navigate(['/progetti']);
     }
 
     /* aggiungere rotte e regole anche per altri */
