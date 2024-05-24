@@ -31,8 +31,6 @@ export class CardSkillComponent implements OnInit, OnDestroy {
         this.livelloArr[i] = (0);
       }
     }
-
-    console.log("nomeCard: ",this.nomeCard,"this.livelloArr", this.livelloArr);
   }
 
 }

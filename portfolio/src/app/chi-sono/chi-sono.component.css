@@ -69,7 +69,7 @@ b {
 .elenco-competenze {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   justify-content: space-between;
   gap: 1em;
 }

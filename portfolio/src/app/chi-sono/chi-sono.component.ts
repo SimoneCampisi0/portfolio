@@ -16,7 +16,6 @@ export class ChiSonoComponent implements OnInit, OnDestroy{
   }
 
   redirectToLinkedin() {
-    console.log("entro")
     window.location.href = 'https://www.linkedin.com/in/simone-campisi-b659b91ab/';
   }
 
