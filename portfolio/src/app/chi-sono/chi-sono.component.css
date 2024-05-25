@@ -27,7 +27,7 @@ b {
 .titolo {
   width: fit-content;
   font-size: 3em;
-  margin-bottom: 0.5em;
+  /*margin-bottom: 0.5em;*/
   font-family: 'CheapPineSans';
   color: var(--secondaryColor);
 }
@@ -66,12 +66,16 @@ b {
   margin-top: 0.5em;
 }
 
+.descr-competenze {
+  margin-bottom: 1em;
+}
+
 .elenco-competenze {
   display: flex;
   flex-direction: row;
-  /*flex-wrap: wrap;*/
-  justify-content: space-between;
-  gap: 1em;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 2em;
 }
 
 @media (max-width: 900px) {
@@ -86,5 +90,9 @@ b {
 
   .competenze {
     width: 75vw;
+  }
+
+  .descr-competenze {
+    margin-bottom: 0.5em;
   }
 }
