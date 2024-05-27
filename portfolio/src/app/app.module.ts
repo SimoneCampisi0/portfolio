@@ -24,7 +24,7 @@ import { ProgettiComponent } from './progetti/progetti/progetti.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     RouteService
