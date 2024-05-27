@@ -19,3 +19,7 @@
   --secondaryColor: #6985C0;
   --accentColor: #cccccc;
 }
+
+body {
+  margin: 0;
+}
