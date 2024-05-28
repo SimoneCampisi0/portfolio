@@ -1,6 +1,5 @@
-import {HostListener, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
-import {animate, AnimationBuilder, AnimationPlayer, style} from "@angular/animations";
 
 @Injectable({
   providedIn: 'root',
@@ -11,48 +10,42 @@ export class RouteService {
   progettiOffset: number = 0;
   windowHeight!: number;
 
-  constructor(private router: Router, private animationBuilder: AnimationBuilder
-  ) {
+  constructor(private router: Router) {
   }
 
 
   cambiaPagina(pagina: string) {
+    let scrollPosition = 0;
+    let route = '';
     switch (pagina) {
       case 'home':
-        document.documentElement.scrollTop = 0;
-        this.router.navigate(['/home']);
+        // document.documentElement.scrollTop = 0;
+        scrollPosition = 0;
+        route = '/home';
+        // this.router.navigate(['/home']);
         break;
 
       case 'chi-sono':
-        this.playAnimation().then(() => {
-          document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset;
-          this.router.navigate(['/chi-sono']);
-        })
+        // document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset;
+        scrollPosition = this.homeOffset + this.chiSonoOffset;
+        route = '/chi-sono';
+        // this.router.navigate(['/chi-sono']);
         break;
 
       case 'progetti':
-        document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset + this.progettiOffset;
-        this.router.navigate(['/progetti']);
+        // document.documentElement.scrollTop = this.homeOffset + this.chiSonoOffset + this.progettiOffset;
+        scrollPosition = this.homeOffset + this.chiSonoOffset + this.progettiOffset;
+        route = '/progetti';
+        // this.router.navigate(['/progetti']);
         break;
 
       case 'contattami':
         break;
     }
-  }
-
-  // Funzione per eseguire l'animazione
-  private playAnimation(): Promise<void> {
-    const animationPlayer: AnimationPlayer = this.animationBuilder.build([
-      animate('0.3s ease', style({ opacity: 0 })),
-    ]).create(document.documentElement);
-
-    animationPlayer.play();
-
-    return new Promise((resolve) => {
-      animationPlayer.onDone(() => {
-        resolve();
-      });
-    });
+    /* Scroll fino alla posizione indicata in scrollPosition.
+        Behavior permette di scegliere quale animazione utilizzare durante lo scorrimento */
+    window.scrollTo({top: scrollPosition, behavior: 'smooth'});
+    this.router.navigate([route]);
   }
 
 
