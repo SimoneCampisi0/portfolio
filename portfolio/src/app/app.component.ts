@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {RouteService} from "./service/routes.service";
 import {Router} from "@angular/router";
 import {WindowRefService} from "./service/window.service";
@@ -8,17 +8,24 @@ import {WindowRefService} from "./service/window.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
   // @ViewChild('homeSection') homeSection: ElementRef | undefined;
   // @ViewChild('chiSonoSection') chiSonoSection: ElementRef | undefined;
   // @ViewChild('progettiSection') progettiSection: ElementRef | undefined;
 
   title = 'portfolio'
+  paginaCambiataManualmente: boolean = false;
 
   constructor(private routerService: RouteService,
               private router: Router,
               private windowService: WindowRefService) {
     this.updateWindowHeight();
+  }
+
+  ngOnInit() {
+    this.routerService.cambiaPaginaInCorso$.subscribe((value) => {
+      this.paginaCambiataManualmente = value
+    })
   }
 
   @HostListener('window:resize', ['$event'])
@@ -28,18 +35,20 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    let currentHeight = document.documentElement.scrollTop;
+    if(!this.paginaCambiataManualmente) {
+      let currentHeight = document.documentElement.scrollTop;
 
-    if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
-      this.router.navigate(['/home']);
-    }
+      if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
+        this.router.navigate(['/home']);
+      }
 
-    else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
-      this.router.navigate(['/chi-sono']);
-    }
+      else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
+        this.router.navigate(['/chi-sono']);
+      }
 
-    else if(currentHeight >= this.routerService.progettiOffset - 50) {
-      this.router.navigate(['/progetti']);
+      else if(currentHeight >= this.routerService.progettiOffset - 50) {
+        this.router.navigate(['/progetti']);
+      }
     }
 
     /* aggiungere rotte e regole anche per altri */
@@ -51,10 +60,4 @@ export class AppComponent implements AfterViewInit {
     this.routerService.progettiOffset = (this.windowService.nativeWindow.innerHeight * 2);
   }
 
-  ngAfterViewInit() {
-    // if (this.homeSection && this.chiSonoSection) {
-    //   this.routerService.homeOffset = this.homeSection.nativeElement.offsetHeight; //Ottengo l'altezza del componente
-    //   this.routerService.chiSonoOffset = this.chiSonoSection.nativeElement.offsetHeight;
-    // }
-  }
 }
