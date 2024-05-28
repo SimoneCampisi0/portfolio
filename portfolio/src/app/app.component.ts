@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {RouteService} from "./service/routes.service";
 import {Router} from "@angular/router";
 import {WindowRefService} from "./service/window.service";
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  onResize() {
     this.updateWindowHeight();
   }
 
