@@ -9,7 +9,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ChiSonoComponent } from './chi-sono/chi-sono.component';
 import { RouteService } from "./service/routes.service";
 import { CardSkillComponent } from './chi-sono/components/card-skill/card-skill.component';
-import { ProgettiComponent } from './progetti/progetti/progetti.component';
+import { ProgettiComponent } from './progetti/progetti.component';
+import {
+  CarouselCaptionComponent,
+  CarouselComponent,
+  CarouselControlComponent,
+  CarouselInnerComponent,
+  CarouselItemComponent
+} from "@coreui/angular";
+import {CarouselProgettiComponent} from "./progetti/components/carousel-progetti.component";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -22,9 +31,16 @@ import { ProgettiComponent } from './progetti/progetti/progetti.component';
     ProgettiComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CarouselComponent,
+    CarouselInnerComponent,
+    CarouselItemComponent,
+    CarouselControlComponent,
+    CarouselCaptionComponent,
+    CarouselProgettiComponent,
   ],
   providers: [
     RouteService

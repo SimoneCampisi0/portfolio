@@ -1,0 +1,14 @@
+<div class="progetti">
+  <div class="progetti-titolo">
+
+  </div>
+  <div class="progetti-descr">
+
+  </div>
+  <div class="carosello">
+    <div *ngFor="let carousel of carouselPerProject | keyvalue">
+      <carousel-progetti [slides]="carousel.value"></carousel-progetti>
+    </div>
+  </div>
+
+</div>
