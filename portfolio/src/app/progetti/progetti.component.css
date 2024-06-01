@@ -1,6 +1,6 @@
 .progetti {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -12,6 +12,17 @@
   height: 100vh;
 }
 
+.progetti-titolo {
+  font-size: 3em;
+  font-family: 'CheapPineSans';
+  color: var(--secondaryColor);
+}
+
+.progetti-descr {
+  width: 80%;
+  text-align: center;
+  padding: 2em;
+}
 
 .carosello {
   width: 50%;

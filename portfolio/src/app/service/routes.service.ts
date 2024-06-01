@@ -9,6 +9,7 @@ export class RouteService {
   homeOffset: number = 0;
   chiSonoOffset: number = 0;
   progettiOffset: number = 0;
+  contattamiOffset: number = 0;
   windowHeight!: number;
 
   cambiaPaginaInCorso$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -28,16 +29,21 @@ export class RouteService {
         break;
 
       case 'chi-sono':
-        scrollPosition = this.homeOffset + this.chiSonoOffset;
+        scrollPosition = this.chiSonoOffset;
+        console.log("scrollPosition chi sono: ", scrollPosition)
         route = '/chi-sono';
         break;
 
       case 'progetti':
-        scrollPosition = this.homeOffset + this.chiSonoOffset + this.progettiOffset;
+        scrollPosition = this.progettiOffset;
+        console.log("scrollPosition progetti: ", scrollPosition)
         route = '/progetti';
         break;
 
       case 'contattami':
+        scrollPosition = this.contattamiOffset;
+        console.log("scrollPosition contattami: ", scrollPosition)
+        route = '/contattami';
         break;
     }
     // Scroll fino alla posizione indicata in scrollPosition. Attende fino al completamento della Promise

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnDestroy, OnInit} from "@angular/core";
+import {Component, Input, OnDestroy, OnInit} from "@angular/core";
 import {
   CarouselCaptionComponent,
   CarouselComponent, CarouselControlComponent,
@@ -7,6 +7,7 @@ import {
 } from "@coreui/angular";
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
+import {NewlinePipe} from "../../shared/newline.pipe";
 
 @Component({
   selector: 'carousel-progetti',
@@ -22,7 +23,7 @@ import {NgForOf} from "@angular/common";
           />
           <c-carousel-caption class=" d-md-block">
             <h3>{{ slide.title }}</h3>
-            <p>{{ slide.subtitle }}</p>
+            <p [innerHTML]="slide.subtitle|newline"></p>
             <div (click)="openGithub(slide.github)">
               <i class="fa-brands fa-github link-social"></i>
             </div>
@@ -33,23 +34,35 @@ import {NgForOf} from "@angular/common";
       <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
     </c-carousel>
   `,
-  styles: `c-carousel-caption {
-    color: white !important;
-  }
+  styles: `
+    @media (max-height: 700px) {
+      c-carousel {
+        height: auto;
+      }
+    }
 
-  img {
-    opacity: 0.6;
-  }
 
-  c-carousel-control {
-    color: white !important;
-  }
+    c-carousel-caption {
+      color: white !important;
+    }
 
-  .link-social:hover {
-    color: var(--secondaryColor) !important;
-    cursor: pointer !important;
-    transition: 0.2s;
-  }
+    img {
+      opacity: 0.6;
+    }
+
+    c-carousel-control {
+      color: white !important;
+    }
+
+    .link-social {
+      height: 2em;
+    }
+
+    .link-social:hover {
+      color: var(--secondaryColor) !important;
+      cursor: pointer !important;
+      transition: 0.2s;
+    }
   `
   ,
   standalone: true,
@@ -60,8 +73,10 @@ import {NgForOf} from "@angular/common";
     CarouselCaptionComponent,
     CarouselControlComponent,
     RouterLink,
-    NgForOf
+    NgForOf,
+    NewlinePipe
   ],
+
 })
 export class CarouselProgettiComponent implements OnDestroy, OnInit {
   @Input() slides!: any[]
@@ -74,16 +89,13 @@ export class CarouselProgettiComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
-    console.log("slides in input: ", this.slides)
   }
 
   onItemChange($event: any): void {
-    console.log('Carousel onItemChange', $event);
   }
 
   ngOnDestroy(): void {
   }
-
 
 
 }

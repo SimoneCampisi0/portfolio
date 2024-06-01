@@ -19,6 +19,7 @@ import {
 } from "@coreui/angular";
 import {CarouselProgettiComponent} from "./progetti/components/carousel-progetti.component";
 import {CommonModule} from "@angular/common";
+import {ContattamiComponent} from "./contattami/contattami.component";
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import {CommonModule} from "@angular/common";
     HomepageComponent,
     ChiSonoComponent,
     CardSkillComponent,
-    ProgettiComponent
+    ProgettiComponent,
+    ContattamiComponent
+
   ],
   imports: [
     CommonModule,

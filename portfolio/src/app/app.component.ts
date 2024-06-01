@@ -9,9 +9,10 @@ import {WindowRefService} from "./service/window.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  // @ViewChild('homeSection') homeSection: ElementRef | undefined;
-  // @ViewChild('chiSonoSection') chiSonoSection: ElementRef | undefined;
-  // @ViewChild('progettiSection') progettiSection: ElementRef | undefined;
+  // @ViewChild('homeSection') homeSection: ElementRef;
+  // @ViewChild('chiSonoSection') chiSonoSection: ElementRef;
+  // @ViewChild('progettiSection') progettiSection: ElementRef;
+  // @ViewChild('contattamiSection') contattamiSection: ElementRef;
 
   title = 'portfolio'
   paginaCambiataManualmente: boolean = false;
@@ -38,6 +39,9 @@ export class AppComponent implements OnInit {
     if(!this.paginaCambiataManualmente) {
       let currentHeight = document.documentElement.scrollTop;
 
+      console.log("currentHeight: ", currentHeight, " contattamiOffset: ", this.routerService.contattamiOffset)
+
+
       if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
         this.router.navigate(['/home']);
       }
@@ -46,8 +50,12 @@ export class AppComponent implements OnInit {
         this.router.navigate(['/chi-sono']);
       }
 
-      else if(currentHeight >= this.routerService.progettiOffset - 50) {
+      else if(currentHeight >= this.routerService.progettiOffset - 50 && currentHeight < (this.routerService.contattamiOffset - 50)) {
         this.router.navigate(['/progetti']);
+      }
+
+      else if(currentHeight >= this.routerService.contattamiOffset - 50) {
+        this.router.navigate(['/contattami']);
       }
     }
 
@@ -58,6 +66,10 @@ export class AppComponent implements OnInit {
     this.routerService.windowHeight = this.windowService.nativeWindow.innerHeight;
     this.routerService.chiSonoOffset = this.windowService.nativeWindow.innerHeight;
     this.routerService.progettiOffset = (this.windowService.nativeWindow.innerHeight * 2);
+    this.routerService.contattamiOffset = (this.windowService.nativeWindow.innerHeight * 3);
+
+    console.log("progettiOffset: ", this.routerService.progettiOffset);
+    console.log("contattamiOffset: ", this.routerService.contattamiOffset);
   }
 
 }
