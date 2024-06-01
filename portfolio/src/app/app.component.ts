@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {RouteService} from "./service/routes.service";
 import {Router} from "@angular/router";
 import {WindowRefService} from "./service/window.service";
@@ -8,11 +8,11 @@ import {WindowRefService} from "./service/window.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  // @ViewChild('homeSection') homeSection: ElementRef;
-  // @ViewChild('chiSonoSection') chiSonoSection: ElementRef;
-  // @ViewChild('progettiSection') progettiSection: ElementRef;
-  // @ViewChild('contattamiSection') contattamiSection: ElementRef;
+export class AppComponent implements OnInit, AfterViewInit{
+  @ViewChild('homeSection') homeSection!: ElementRef;
+  @ViewChild('chiSonoSection') chiSonoSection!: ElementRef;
+  @ViewChild('progettiSection') progettiSection!: ElementRef;
+  @ViewChild('contattamiSection') contattamiSection!: ElementRef;
 
   title = 'portfolio'
   paginaCambiataManualmente: boolean = false;
@@ -20,13 +20,17 @@ export class AppComponent implements OnInit {
   constructor(private routerService: RouteService,
               private router: Router,
               private windowService: WindowRefService) {
-    this.updateWindowHeight();
+    // this.updateWindowHeight();
   }
 
   ngOnInit() {
     this.routerService.cambiaPaginaInCorso$.subscribe((value) => {
       this.paginaCambiataManualmente = value
     })
+  }
+
+  ngAfterViewInit() {
+    this.updateWindowHeight();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -63,11 +67,15 @@ export class AppComponent implements OnInit {
   }
 
   private updateWindowHeight() {
-    this.routerService.windowHeight = this.windowService.nativeWindow.innerHeight;
-    this.routerService.chiSonoOffset = this.windowService.nativeWindow.innerHeight;
-    this.routerService.progettiOffset = (this.windowService.nativeWindow.innerHeight * 2);
-    this.routerService.contattamiOffset = (this.windowService.nativeWindow.innerHeight * 3);
+    // this.routerService.windowHeight = this.windowService.nativeWindow.innerHeight;
 
+    this.routerService.homeOffset = this.homeSection.nativeElement.offsetTop;
+    this.routerService.chiSonoOffset = this.chiSonoSection.nativeElement.offsetTop;
+    this.routerService.progettiOffset = (this.progettiSection.nativeElement.offsetTop);
+    this.routerService.contattamiOffset = (this.contattamiSection.nativeElement.offsetTop);
+
+    console.log("homeOffset: ", this.routerService.homeOffset)
+    console.log("chiSonoOffset: ", this.routerService.chiSonoOffset);
     console.log("progettiOffset: ", this.routerService.progettiOffset);
     console.log("contattamiOffset: ", this.routerService.contattamiOffset);
   }
