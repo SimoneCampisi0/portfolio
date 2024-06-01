@@ -8,7 +8,7 @@ import {WindowRefService} from "./service/window.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit{
+export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('homeSection') homeSection!: ElementRef;
   @ViewChild('chiSonoSection') chiSonoSection!: ElementRef;
   @ViewChild('progettiSection') progettiSection!: ElementRef;
@@ -18,9 +18,7 @@ export class AppComponent implements OnInit, AfterViewInit{
   paginaCambiataManualmente: boolean = false;
 
   constructor(private routerService: RouteService,
-              private router: Router,
-              private windowService: WindowRefService) {
-    // this.updateWindowHeight();
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -40,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   @HostListener('window:scroll', ['$event'])
   onScroll() {
-    if(!this.paginaCambiataManualmente) {
+    if (!this.paginaCambiataManualmente) {
       let currentHeight = document.documentElement.scrollTop;
 
       console.log("currentHeight: ", currentHeight, " contattamiOffset: ", this.routerService.contattamiOffset)
@@ -48,17 +46,11 @@ export class AppComponent implements OnInit, AfterViewInit{
 
       if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
         this.router.navigate(['/home']);
-      }
-
-      else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
+      } else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
         this.router.navigate(['/chi-sono']);
-      }
-
-      else if(currentHeight >= this.routerService.progettiOffset - 50 && currentHeight < (this.routerService.contattamiOffset - 50)) {
+      } else if (currentHeight >= this.routerService.progettiOffset - 50 && currentHeight < (this.routerService.contattamiOffset - 50)) {
         this.router.navigate(['/progetti']);
-      }
-
-      else if(currentHeight >= this.routerService.contattamiOffset - 50) {
+      } else if (currentHeight >= this.routerService.contattamiOffset - 50) {
         this.router.navigate(['/contattami']);
       }
     }
