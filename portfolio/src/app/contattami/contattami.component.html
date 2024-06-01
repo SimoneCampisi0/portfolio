@@ -1,1 +1,27 @@
-<div class="contattami"></div>
+<div class="contattami">
+
+  <div class="contattami-titolo">
+    Contattami
+  </div>
+
+  <div class="contattami-sottotitolo">
+    Compilando e inviando questo form, potrai scrivere sulla mia email principale.
+  </div>
+
+  <form [formGroup]="formGroup" class="form-contattami">
+    <label for="nomeCognome">Il tuo nome</label>
+    <input type="text" formControlName="nomeCognome" id="nomeCognome"
+           [ngClass]="{ 'control-invalid': formGroup.controls['nomeCognome']?.invalid && formGroup.controls['nomeCognome']?.touched }"/>
+
+    <label for="email">Email</label>
+    <input type="email" formControlName="email" id="email"
+           [ngClass]="{ 'control-invalid': formGroup.controls['email']?.invalid && formGroup.controls['email']?.touched }"/>
+
+    <label for="messaggio">Scrivi...</label>
+    <textarea id="messaggio" formControlName="messaggio" type="text"
+              [ngClass]="{ 'control-invalid': formGroup.controls['messaggio']?.invalid && formGroup.controls['messaggio']?.touched }"></textarea>
+
+
+    <button type="submit" (click)="onSendMail()">Invia</button>
+  </form>
+</div>

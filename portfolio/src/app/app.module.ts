@@ -11,15 +11,17 @@ import { RouteService } from "./service/routes.service";
 import { CardSkillComponent } from './chi-sono/components/card-skill/card-skill.component';
 import { ProgettiComponent } from './progetti/progetti.component';
 import {
+  ButtonDirective,
   CarouselCaptionComponent,
   CarouselComponent,
   CarouselControlComponent,
   CarouselInnerComponent,
-  CarouselItemComponent
+  CarouselItemComponent, FormControlDirective, FormDirective, FormLabelDirective
 } from "@coreui/angular";
 import {CarouselProgettiComponent} from "./progetti/components/carousel-progetti.component";
 import {CommonModule} from "@angular/common";
 import {ContattamiComponent} from "./contattami/contattami.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -44,6 +46,12 @@ import {ContattamiComponent} from "./contattami/contattami.component";
     CarouselControlComponent,
     CarouselCaptionComponent,
     CarouselProgettiComponent,
+    FormDirective,
+    FormLabelDirective,
+    FormControlDirective,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonDirective,
   ],
   providers: [
     RouteService

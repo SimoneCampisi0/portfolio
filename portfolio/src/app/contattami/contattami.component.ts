@@ -1,4 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-contattami',
@@ -6,11 +7,25 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
   styleUrl: './contattami.component.css'
 })
 export class ContattamiComponent implements OnInit, OnDestroy {
+  formGroup!: FormGroup;
 
-  constructor() {
+  constructor(private builder: FormBuilder) {
   }
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  createForm(): void {
+    this.formGroup = this.builder.group({
+      nomeCognome: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      messaggio: new FormControl(null, [Validators.required]),
+    })
+  }
+
+  onSendMail() {
+    console.log("values: ", this.formGroup)
   }
 
   ngOnDestroy(): void {
