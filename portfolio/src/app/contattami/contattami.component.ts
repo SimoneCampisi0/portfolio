@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-contattami',
@@ -26,6 +27,16 @@ export class ContattamiComponent implements OnInit, OnDestroy {
 
   onSendMail() {
     console.log("values: ", this.formGroup)
+
+    if(this.formGroup.invalid) {
+      Swal.fire({
+        icon: "error",
+        title: "Dati non validi",
+        text: "Inserisci correttamente i dati",
+      });
+    }
+
+    
   }
 
   ngOnDestroy(): void {
