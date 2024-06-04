@@ -28,8 +28,6 @@ export class ContattamiComponent implements OnInit, OnDestroy {
   }
 
   onSendMail() {
-    console.log("values: ", this.formGroup)
-
     if (this.formGroup.invalid) {
       Swal.fire({
         icon: "error",
@@ -53,10 +51,8 @@ export class ContattamiComponent implements OnInit, OnDestroy {
 
     emailjs.send('service_ng4e4in', 'template_qbbjhdx', templateParams)
       .then((response) => {
-          console.log("success: ", response.status, response.text)
         },
         (error) => {
-          console.log("failed: ", error)
         })
   }
 

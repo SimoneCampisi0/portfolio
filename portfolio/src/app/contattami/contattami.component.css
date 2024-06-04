@@ -5,9 +5,11 @@
   justify-content: center;
 
   /*background-image: url('../../assets/black.png');*/
-  background-image:url('../../assets/background1.jpg');
+  background-image:url('../../assets/background2.jpg');
   background-repeat: no-repeat; /* Impedisci la ripetizione dell'immagine */
   background-size: cover; /* Adatta l'immagine alla dimensione del div */
+  background-color: rgba(0, 0, 0, 0.5); /* Valore RGBA con un'opacità del 50% */
+
   color: white;
 
   height: 100vh;

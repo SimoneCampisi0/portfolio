@@ -41,9 +41,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (!this.paginaCambiataManualmente) {
       let currentHeight = document.documentElement.scrollTop;
 
-      console.log("currentHeight: ", currentHeight, " contattamiOffset: ", this.routerService.contattamiOffset)
-
-
       if (currentHeight >= this.routerService.homeOffset && currentHeight < (this.routerService.chiSonoOffset - 50)) {
         this.router.navigate(['/home']);
       } else if (currentHeight >= this.routerService.chiSonoOffset - 50 && currentHeight < (this.routerService.progettiOffset - 50)) {
@@ -65,11 +62,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.routerService.chiSonoOffset = this.chiSonoSection.nativeElement.offsetTop;
     this.routerService.progettiOffset = (this.progettiSection.nativeElement.offsetTop);
     this.routerService.contattamiOffset = (this.contattamiSection.nativeElement.offsetTop);
-
-    console.log("homeOffset: ", this.routerService.homeOffset)
-    console.log("chiSonoOffset: ", this.routerService.chiSonoOffset);
-    console.log("progettiOffset: ", this.routerService.progettiOffset);
-    console.log("contattamiOffset: ", this.routerService.contattamiOffset);
   }
 
 }
