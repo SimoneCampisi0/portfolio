@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'CheapPine';
-  src: url('/assets/cheap_pine.otf');
+  src: url('./assets/cheap_pine.otf');
 }
 
 @font-face {
   font-family: 'CheapPineSans';
-  src: url('/assets/cheap_pine_sans.ttf');
+  src: url('./assets/cheap_pine_sans.ttf');
 }
 
 @font-face {
   font-family: 'LeagueSpartan';
-  src: url('/assets/league-spartan.otf');
+  src: url('./assets/league-spartan.otf');
 }
 
 :root {

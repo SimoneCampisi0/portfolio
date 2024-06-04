@@ -25,7 +25,7 @@ const fadeOut = trigger('fadeOut', [exitTransition])
   animations: [fadeIn, fadeOut]
 })
 export class HeaderMenuComponent {
-  svgData: string = '../../assets/list.svg'
+  svgData: string = './assets/list.svg'
 
   isMobileMenuOpen = false;
 
