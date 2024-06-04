@@ -8,7 +8,7 @@
 
   height: 100vh;
 
-  background-image: url('./assets/background0.jpg'); /* Immagine di sfondo */
+  background-image: url('/assets/background0.jpg'); /* Immagine di sfondo */
   background-repeat: no-repeat; /* Impedisci la ripetizione dell'immagine */
   background-size: cover; /* Adatta l'immagine alla dimensione del div */
 }
