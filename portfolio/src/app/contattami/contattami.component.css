@@ -5,7 +5,7 @@
   justify-content: center;
 
   /*background-image: url('../../assets/black.png');*/
-  background-image:url('/assets/background1.jpg');
+  background-image:url('../../assets/background1.jpg');
   background-repeat: no-repeat; /* Impedisci la ripetizione dell'immagine */
   background-size: cover; /* Adatta l'immagine alla dimensione del div */
   color: white;
