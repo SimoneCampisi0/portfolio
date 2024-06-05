@@ -44,10 +44,16 @@ import {NewlinePipe} from "../../shared/newline.pipe";
 
     c-carousel-caption {
       color: white !important;
+      padding-bottom: 0;
     }
 
     img {
       opacity: 0.6;
+    }
+
+    p {
+      font-size: 0.9em;
+      margin-bottom: 0;
     }
 
     c-carousel-control {

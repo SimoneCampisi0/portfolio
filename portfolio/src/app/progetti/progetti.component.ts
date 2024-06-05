@@ -25,7 +25,7 @@ export class ProgettiComponent implements AfterViewInit, OnDestroy, OnInit {
     slides[1] = {id: 2,
       src: './assets/ecommerce/ecommerce.png',
       title: 'eCommerce',
-      subtitle: 'Un eCommerce strutturato in microservizi.\nRealizzato con Spring Boot & Angular.',
+      subtitle: 'Un eCommerce in microservizi.\nRealizzato con Spring Boot & Angular.',
       github: 'https://github.com/SimoneCampisi0/ecommerce'
     }
     // slides[2] = {id: 3,

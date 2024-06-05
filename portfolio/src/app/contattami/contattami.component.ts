@@ -36,6 +36,7 @@ export class ContattamiComponent implements OnInit, OnDestroy {
       });
     } else {
       this.sendEmailJS();
+      this.formGroup.reset();
     }
 
   }
@@ -51,9 +52,20 @@ export class ContattamiComponent implements OnInit, OnDestroy {
 
     emailjs.send('service_ng4e4in', 'template_qbbjhdx', templateParams)
       .then((response) => {
+          Swal.fire({
+            icon: "success",
+            title: "Messaggio inviato con successo",
+            text: "Il tuo messaggio è stato inviato con successo.",
+          });
         },
         (error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Errore invio messaggio",
+            text: "Sì è verificato un errore durante l'invio del messaggio. Riprova.",
+          });
         })
+
   }
 
   ngOnDestroy(): void {
