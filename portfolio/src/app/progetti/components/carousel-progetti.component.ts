@@ -41,6 +41,13 @@ import {NewlinePipe} from "../../shared/newline.pipe";
       }
     }
 
+    @media (max-width: 900px) {
+      img {
+        opacity: 0.6;
+        width: 200%!important;
+      }
+    }
+
 
     c-carousel-caption {
       color: white !important;
